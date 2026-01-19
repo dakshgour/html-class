@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* DARK MODE */
+body {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+}
+
+/* LIGHT MODE */
+body.light {
+    background: #f1f5f9;
+    color: black;
+}
+
+.dashboard {
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+/* MAIN LAYOUT */
+.main {
+    display: flex;
+    gap: 20px;
+    min-height: 80vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 220px;
+    min-height: 75vh;
+    background: #020617;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.card {
+    width: 160px;
+    height: 120px;
+    background: #020617;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* FIX LIGHT MODE VISIBILITY */
+body.light .sidebar,
+body.light .card {
+    background: white;
+    color: black;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}

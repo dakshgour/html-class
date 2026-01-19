@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+        <button id="modeBtn">🌞 Light Mode</button>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Users</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="card">Analytics</div>
+            <div class="card" id="usersCard">Users</div>
+            <div class="card">Settings</div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Light / Dark mode
+    document.getElementById("modeBtn").onclick = () => {
+        document.body.classList.toggle("light");
+    };
+
+    // Backend data fetch
+    fetch("/users")
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("usersCard").innerText =
+            "Users: " + data.totalUsers;
+    });
+</script>
+
+</body>
+</html>
